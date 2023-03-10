@@ -309,7 +309,7 @@ if __name__ == "__main__":
         plt.axvline(x=cutoffabsent, color="red")
         plt.xlim([0, dimen[1]])
 #        plt.savefig(path + "/"+ID+"processingcutoff.png")
-        plt.savefig(path + "/"+ID+"processingcutoffB.png", format='png',dpi=1200)
+        #plt.savefig(path + "/"+ID+"processingcutoff.png", format='png',dpi=1200)
         plt.show()
 
         
@@ -351,7 +351,7 @@ if __name__ == "__main__":
         plt.axvline(x=cutoff, color="red")
         plt.xlim([0, dimen[1]])
 #        plt.savefig(path + "/"+ID+"processingcutoff.png")
-        plt.savefig(path + "/"+ID+"processingcutoffB.svg", format='svg',dpi=1200)
+        plt.savefig(path + "/"+ID+"processingcutoffB.png", format='png',dpi=1200)
         plt.show()
     else:
         print(

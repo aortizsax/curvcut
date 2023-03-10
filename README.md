@@ -1,4 +1,4 @@
-# otuzeros: README: Post-Qiime2 auto remove features/speices
+# curvcut: README: Post-Qiime2 auto remove features/speices
 ### Adrian Ortiz-Velez
 
 
