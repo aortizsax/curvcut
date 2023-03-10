@@ -94,4 +94,4 @@ Recommended  Cutoff: Trim Features that are present in less than 2.35 samples
 
 Zero Filtered OTU table saved: ./output/16S_OTU_Table_building_materialstable.zerofiltered.csv
 ```
-<![plot](./data/building_data/output/16S_OTU_Table_building_materialsprocessingcutoffB.png)>
+<![plot](./data/building_data/output/16S_OTU_Table_building_materialsprocessingcutofffinal.png)>
