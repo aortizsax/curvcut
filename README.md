@@ -75,4 +75,23 @@ optional arguments:
                         Prefix for output files [default=-1].
 ```
 
+Example:
 
+	cd ./data/building_data/
+	python3 2023_01-04_calccutoff.py -ct 16S_OTU_Table_building_materials.tsv
+	
+Output:
+* Try including './' in front of the data (./16S_OTU_Table_building_materials.tsv) if it returns a permissions error
+* Makes a new directory in the same as the input table
+* Saves graphs of finding the max curvature
+* Saves saves visual for user diagnosis
+* Saves zero filtered table in the new directory
+* Outputs code below for example
+```
+Cubic Spline Finshed
+Execution time in seconds: 1.1464474201202393
+Recommended  Cutoff: Trim Features that are present in less than 2.35 samples
+
+Zero Filtered OTU table saved: ./output/16S_OTU_Table_building_materialstable.zerofiltered.csv
+```
+<![plot](./data/building_data/output/16S_OTU_Table_building_materialsprocessingcutoffB.png)>
