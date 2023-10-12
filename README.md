@@ -45,12 +45,13 @@ $ cd curvcut
 
 ```bash
 $ conda env create -f environment.yml
+$ conda activate curvcut
 ```
 
 To run in commandline, add script to path (instructions depend on the system). Usage below.
 
 ```bash
-$ py.curvcut [-h] [-ct FILE] [-af FILE] [-o OUTPUT_PREFIX]
+$ python3 curvcut.py [-h] [-ct FILE] [-af FILE] [-o OUTPUT_PREFIX]
                                 [-u USER_CUTOFF]
 
 optional arguments:
