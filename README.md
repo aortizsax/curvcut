@@ -52,7 +52,9 @@ To run in commandline, add script to path (instructions depend on the system). U
 
 ```bash
 python3 curvcut.py -h
+```
 
+```bash
 usage: curvcut.py [-h] [-ct FILE] [-af FILE] [-o OUTPUT_PREFIX]
                   [-u USER_CUTOFF]
 
