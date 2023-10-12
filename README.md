@@ -36,23 +36,25 @@ Dependincies:
 To download 
 
 ```bash
-$ git clone https://github.com/aortizsax/curvcut.git
+git clone https://github.com/aortizsax/curvcut.git
 ```
 
 ```bash
-$ cd curvcut
+cd curvcut
 ```
 
 ```bash
-$ conda env create -f environment.yml
-$ conda activate curvcut
+conda env create -f environment.yml
+conda activate curvcut
 ```
 
 To run in commandline, add script to path (instructions depend on the system). Usage below.
 
 ```bash
-$ python3 curvcut.py [-h] [-ct FILE] [-af FILE] [-o OUTPUT_PREFIX]
-                                [-u USER_CUTOFF]
+python3 curvcut.py -h
+
+usage: curvcut.py [-h] [-ct FILE] [-af FILE] [-o OUTPUT_PREFIX]
+                  [-u USER_CUTOFF]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -64,6 +66,7 @@ optional arguments:
                         Prefix for output files [default=output].
   -u USER_CUTOFF, --user-cutoff USER_CUTOFF
                         Prefix for output files [default=-1].
+
 ```
 
 Example:
