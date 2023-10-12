@@ -1,0 +1,40 @@
+arviz @ file:///tmp/build/80754af9/arviz_1614019183254/work
+astroML @ file:///home/conda/feedstock_root/build_artifacts/astroml_1646194322368/work
+astropy @ file:///home/conda/feedstock_root/build_artifacts/astropy_1604777771272/work
+Bottleneck @ file:///opt/conda/conda-bld/bottleneck_1657175564434/work
+cachetools @ file:///home/conda/feedstock_root/build_artifacts/cachetools_1688227447901/work
+certifi==2023.7.22
+cftime @ file:///croot/cftime_1678830372931/work
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+dill @ file:///home/conda/feedstock_root/build_artifacts/dill_1690101045195/work
+fastprogress @ file:///home/conda/feedstock_root/build_artifacts/fastprogress_1658690818839/work
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1693242237773/work
+jenkspy==0.3.3
+joblib==1.3.2
+kiwisolver @ file:///croot/kiwisolver_1672387140495/work
+matplotlib @ file:///tmp/build/80754af9/matplotlib-suite_1613407855456/work
+mkl-service==2.4.0
+netCDF4 @ file:///croot/netcdf4_1673455456943/work
+numexpr @ file:///tmp/build/80754af9/numexpr_1640689830538/work
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1607448156598/work
+packaging @ file:///croot/packaging_1671697413597/work
+pandas==1.3.3
+patsy @ file:///home/conda/feedstock_root/build_artifacts/patsy_1665356157073/work
+Pillow==9.4.0
+ply==3.11
+pymc3 @ file:///home/conda/feedstock_root/build_artifacts/pymc3_1615813646805/work
+pyparsing @ file:///opt/conda/conda-bld/pyparsing_1661452539315/work
+PyQt5-sip==12.11.0
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz @ file:///croot/pytz_1671697431263/work
+scikit-learn==1.3.0
+scipy @ file:///tmp/build/80754af9/scipy_1630606799768/work
+semver @ file:///home/conda/feedstock_root/build_artifacts/semver_1687004453668/work
+sip @ file:///tmp/abs_44cd77b_pu/croots/recipe/sip_1659012365470/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+Theano-PyMC @ file:///tmp/build/80754af9/theano-pymc_1634723179947/work
+threadpoolctl==3.2.0
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+tornado @ file:///opt/conda/conda-bld/tornado_1662061693373/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1688315532570/work
+xarray @ file:///home/conda/feedstock_root/build_artifacts/xarray_1664555688244/work

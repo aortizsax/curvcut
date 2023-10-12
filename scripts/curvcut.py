@@ -84,13 +84,12 @@ if __name__ == "__main__":
     print("Parsing")
 
     print("")
-    print("")
 
     if args.minorallelefreq == None:
         # Get path to make new directory
         # filename = sys.argv
         filename = args.counttable
-        print(filename)
+#        print(filename)
         ID = filename[:-3].split("/")[-1].replace(".", "")
         # set output path
         # path = "/".join(sys.argv[1].split("/")[:-1]) + "/" + zerofiltered
@@ -236,7 +235,6 @@ if __name__ == "__main__":
     y_avg = sum(y_axis) / len(y_axis)
 
     # Cubic slpine
-    print("Cubic Spline")
     cs = CubicSpline(x_axis, y_axis)  # yaxis spline and derivatives
     print("Cubic Spline Finshed")
 
@@ -276,49 +274,19 @@ if __name__ == "__main__":
     print("Execution time in seconds: " + str(executionTime))
 
     if args.minorallelefreq == None:
+        # cutoff calculated for absent species
+        cutoffabsent = cutoff
+        
         print(
             "Recommended  Cutoff: Trim Features that are present in less than "
             + str(round(cutoffpres, 3)) + ' or ' + str(len(jnb.groups_[-1]))
-            + " samples"
+            + " samples. Close graph when you have made a decision on the cuttoff."
         )
-        # print("")
-        # print("If not try",cutoffspres)
-        # print("")
-
-        # plot Curvature
-        plt.plot(xs, kappa)  # ,color=colmapBIO[clustNum])
-        plt.gca().xaxis.grid(True)
-        plt.title("Maximizing Curvature")
-        plt.xlabel("# samples species is absent")
-        plt.ylabel("# of species")
-        plt.savefig(path + "/" + ID + "maxcurvplot.png")
-        plt.show()
-
-        # cutoff calculated for absent species
-        cutoffabsent = cutoff
-        plt.bar(x=x_axis, height=y_original)
-        plt.xlabel("# samples feature is absent in")
-        plt.ylabel("# of features")
-        plt.title(
-            "Trim Features that are absent in more than "
-            + str(round(cutoffabsent, 3))
-            + " samples"
-        )
-        plt.axvline(x=cutoffabsent, color="red")
-        plt.xlim([0, dimen[1]])
-        #        plt.savefig(path + "/"+ID+"processingcutoff.png")
-        # plt.savefig(path + "/"+ID+"processingcutoff.png", format='png',dpi=1200)
-        plt.show()
-        plt.clf()
-
-
-
-        print(
-            "Zero Filtered OTU table saved:", path + "/" + ID + "table.zerofiltered.csv"
-        )
-
+  
+ 
         # calculate cutoff for number of present species/features
         # cutoff = dimen[1] - cutoff
+        cutoff = dimen[1] - cutoff
         presentheight = y_original.copy()
         presentheight.reverse()
         presentx = x_axis.copy()
@@ -331,13 +299,18 @@ if __name__ == "__main__":
         plt.xlabel("# samples a feature is present in")
         plt.ylabel("# of features")
         plt.title(
-            "Trim Features that are present in less than "
-            + str(round(cutoff, 3))
-            + " samples"
+            "Cutoffs to consider: Curvcut algo: " 
+            + str(round(cutoff, 3)) 
+            + "; Fisher-Jenks: "
+            + str(len(jnb.groups_[-1])) 
+            + " "
         )
-        plt.axvline(x=cutoff, color="red",ls='--')
-        plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.')
+        plt.axvline(x=cutoff, color="red",ls='--',
+                    label="Curvcut: "+str(cutoff))
+        plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.',
+                    label="Fisher-Jenks: "+str(len(jnb.groups_[-1])))
         plt.xlim([0, dimen[1]])
+        plt.legend(loc='upper right')
         #        plt.savefig(path + "/"+ID+"processingcutoff.png")
         plt.savefig(
             path + "/" + ID + "processingcutofffinal.svg", format="svg", dpi=1200
@@ -346,8 +319,8 @@ if __name__ == "__main__":
         
         
         # calculate cutoff for number of present species/features
-        cutoff = dimen[1] - cutoff
-        cutoff = input('After visual inspection of the graph, what cutoff would you like to use?\nPlease enter integer:')
+
+        cutoff = int(input('After visual inspection of the graph, what cutoff would you like to use?\nPlease enter integer:'))
 
         # vectors of number of presence and absence in each row
         ispres = data != 0.0
@@ -357,7 +330,10 @@ if __name__ == "__main__":
 
         # save filtered table
         OTUzerofiltered.to_csv(path + "/" + ID + "table.zerofiltered.csv")
-        
+        print(
+            "Zero Filtered OTU table saved:", path + "/" + ID + "table.zerofiltered.csv"
+        )
+     
         
     else:
         print(
@@ -414,9 +390,11 @@ if __name__ == "__main__":
         plt.xlabel("# samples a feature is present in")
         plt.ylabel("# of features")
         plt.title(
-            "Trim Features that are present in less than "
+            "Cutoffs to consider: curvature: " 
             + str(round(cutoff, 3)) 
-            + " samples"
+            + "; Fisher-Jenks: "
+            + str(len(jnb.groups_[-1])) 
+            + " "
         )
         plt.axvline(x=cutoff, color="red",ls='--')
         plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.')
@@ -424,3 +402,6 @@ if __name__ == "__main__":
         #        plt.savefig(path + "/"+ID+"processingcutoff.png")
         plt.savefig(path + "/" + ID + "processingcutoffB.svg", format="svg", dpi=1200)
         plt.show()
+        
+        
+        
