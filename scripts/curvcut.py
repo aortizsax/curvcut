@@ -199,8 +199,8 @@ if __name__ == "__main__":
     y_axis = list(hist_zero)[:]
     
 
-    jnb = JenksNaturalBreaks(2)
-    jnb.fit(y_axis)
+#    jnb = JenksNaturalBreaks(2)
+#    jnb.fit(y_axis)
 
     # initialize postion from histogram
     x_axis = list(bact_zero_table.keys())
@@ -279,7 +279,7 @@ if __name__ == "__main__":
         
         print(
             "Recommended  Cutoff: Trim Features that are present in less than "
-            + str(round(cutoffpres, 3)) + ' or ' + str(len(jnb.groups_[-1]))
+            + str(round(cutoffpres, 3)) #+ #' or ' + str(len(jnb.groups_[-1]))
             + " samples. Close graph when you have made a decision on the cuttoff."
         )
   
@@ -302,13 +302,13 @@ if __name__ == "__main__":
             "Cutoffs to consider: Curvcut algo: " 
             + str(round(cutoff, 3)) 
             + "; Fisher-Jenks: "
-            + str(len(jnb.groups_[-1])) 
+   #         + str(len(jnb.groups_[-1])) 
             + " "
         )
         plt.axvline(x=cutoff, color="red",ls='--',
                     label="Curvcut: "+str(cutoff))
-        plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.',
-                    label="Fisher-Jenks: "+str(len(jnb.groups_[-1])))
+   #     plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.',
+    #                label="Fisher-Jenks: "+str(len(jnb.groups_[-1])))
         plt.xlim([0, dimen[1]])
         plt.legend(loc='upper right')
         #        plt.savefig(path + "/"+ID+"processingcutoff.png")
@@ -393,11 +393,11 @@ if __name__ == "__main__":
             "Cutoffs to consider: curvature: " 
             + str(round(cutoff, 3)) 
             + "; Fisher-Jenks: "
-            + str(len(jnb.groups_[-1])) 
+   #         + str(len(jnb.groups_[-1])) 
             + " "
         )
         plt.axvline(x=cutoff, color="red",ls='--')
-        plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.')
+    #    plt.axvline(x=len(jnb.groups_[-1]), color="black",ls='-.')
         plt.xlim([0, 50])
         #        plt.savefig(path + "/"+ID+"processingcutoff.png")
         plt.savefig(path + "/" + ID + "processingcutoffB.svg", format="svg", dpi=1200)
